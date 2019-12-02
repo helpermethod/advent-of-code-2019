@@ -2,11 +2,11 @@
 
 import java.io.File
 
-fun fuel(mass: Double) = Math.floor(mass / 3) - 2
+fun fuel(mass: Int) = mass / 3 - 2
 
 File("audit-smaller-sorted.txt")
     .readLines()
-    .map(String::toDouble)      
+    .map(String::toInt)      
     .map(::fuel)
     .sum()
     .let(::println)
