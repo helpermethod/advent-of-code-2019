@@ -10,7 +10,7 @@ tailrec fun fuelRec(mass: Int, acc: Int = 0): Int {
     return if (amount <= 0) acc else fuelRec(amount, acc + amount)
 }
 
-File("audit-smaller-sorted.txt")
+File("input.txt")
     .readLines()
     .map(String::toInt)      
     .map(::fuel)

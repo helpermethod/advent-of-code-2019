@@ -4,7 +4,7 @@ import java.io.File
 
 fun fuel(mass: Int) = mass / 3 - 2
 
-File("audit-smaller-sorted.txt")
+File("input.txt")
     .readLines()
     .map(String::toInt)      
     .map(::fuel)
