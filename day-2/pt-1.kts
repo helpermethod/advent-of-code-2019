@@ -14,13 +14,14 @@ tailrec fun compute(positions: MutableList<Int>, start: Int = 0): MutableList<In
         else -> throw AssertionError("Unknown opcode")
     }
 
-    positions[start + 3] = op(positions[start + 1], positions[start + 2])
+    positions[positions[start + 3]] = op(positions[positions[start + 1]], positions[positions[start + 2]])
 
     return compute(positions, start + 4)
 }
 val positions = 
     File("input.txt")
         .readText()
+        .trimEnd()
         .split(",")
         .map(String::toInt)
         .toMutableList()
