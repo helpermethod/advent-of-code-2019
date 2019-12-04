@@ -37,14 +37,13 @@ val input =
 
 combinations()
     .find { (noun, verb) ->
-        val positions = 
-            input.mapIndexed { i, e -> 
-                when(i) {
-                    1 -> noun
-                    2 -> verb
-                    else -> e
-                }
+        val positions = input.mapIndexed { i, e -> 
+            when(i) {
+                1 -> noun
+                2 -> verb
+                else -> e
             }
+        }
 
         compute(positions.toMutableList())[0] == 19690720
     }
