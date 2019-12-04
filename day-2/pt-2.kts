@@ -34,7 +34,6 @@ val input =
         .trimEnd()
         .split(",")
         .map(String::toInt)
-        .toMutableList()
 
 combinations()
     .find { (noun, verb) ->

@@ -19,13 +19,17 @@ tailrec fun compute(positions: MutableList<Int>, start: Int = 0): MutableList<In
     return compute(positions, start + 4)
 }
 
-val positions = File("input.txt")
+File("input.txt")
     .readText()
     .trimEnd()
     .split(",")
     .map(String::toInt)
-
-positions[1] = 12
-positions[2] = 2
-
-println(compute(positions))
+    .mapIndexed { i, e ->
+        when(i) {
+            1 -> 12
+            2 -> 2
+            else -> e
+        }
+    }
+    .let { compute(it.toMutableList()) }
+    .let { println(it[0]) }
